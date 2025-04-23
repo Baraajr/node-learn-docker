@@ -1,0 +1,7 @@
+/node_modules
+/2-dockerfiles-solution
+/1-dockerfile-solution
+/multistage-dockerfile-solution
+Dockerfile*
+.env
+docker-compose*
