@@ -20,7 +20,7 @@ redisClient.connect();
 const DB_USER = 'root';
 const DB_PASWWORD = 'test1234';
 const DB_PORT = 27017;
-const DB_HOST = '172.18.0.2';
+const DB_HOST = 'mongo';
 const url = `mongodb://${DB_USER}:${DB_PASWWORD}@${DB_HOST}:${DB_PORT}`;
 mongoose
   .connect(url)
