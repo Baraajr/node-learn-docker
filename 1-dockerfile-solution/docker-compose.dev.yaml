@@ -1,0 +1,13 @@
+# only development related compose file
+version: '3'
+services:
+  node-app:
+    build:
+      context: . # the workdir (parent of Dockerfile)
+      args: # some arguments to send to Dockerfile
+        - NODE_ENV=development
+    volumes: # binding mount
+      - ./src:/app/src:ro # ro: read only (mount binding)
+    environment:
+      - NODE_ENV=development
+    command: npm run dev # override the CMD command in the Docker file

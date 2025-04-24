@@ -1,0 +1,11 @@
+version: '3'
+services:
+  node-app:
+    build:
+      context: . # the folder where Dockerfile is
+      args: # some arguments to send to Dockerfile
+        - NODE_ENV=production
+    restart: always
+    environment:
+      - NODE_ENV=production
+    command: npm start # override the CMD command in the Docker file

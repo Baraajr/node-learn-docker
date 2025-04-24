@@ -1,0 +1,11 @@
+# only development related compose file
+version: '3'
+services:
+  node-app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./src:/app/src:ro # ro: read only (mount binding)
+    environment:
+      - NODE_ENV=development

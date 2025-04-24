@@ -1,0 +1,10 @@
+# base docker-compose file
+version: '3'
+services:
+  node-app:
+    container_name: learn-docker #specify the name of the container
+    image: learn-docker
+    ports:
+      - '5500:5500'
+    env_file:
+      - ./.env

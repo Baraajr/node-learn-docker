@@ -4,6 +4,9 @@ services:
   node-app:
     container_name: learn-docker #specify the name of the container
     image: learn-docker
+    depends_on: # mongo and redis must be running first before running the node-app
+      - mongo
+      - redis
     ports:
       - '5500:5500'
     env_file:
@@ -20,6 +23,7 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: test1234
 
   mongo-express:
+    container_name: mongo-express
     image: mongo-express
     restart: always
     ports:
@@ -30,5 +34,11 @@ services:
       ME_CONFIG_MONGODB_URL: mongodb://root:test1234@mongo:27017/
       ME_CONFIG_BASICAUTH: false
 
+  redis:
+    container_name: redis
+    image: redis
+    restart: always
+    ports:
+      - 6379:6379
 volumes:
   mongo-db:

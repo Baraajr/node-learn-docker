@@ -1,0 +1,9 @@
+version: '3'
+services:
+  node-app:
+    build:
+      context: . # the folder where Dockerfile.prod is
+      dockerfile: Dockerfile.prod
+    restart: always
+    environment:
+      - NODE_ENV=production
