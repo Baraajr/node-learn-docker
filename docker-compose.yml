@@ -5,7 +5,7 @@ services:
     container_name: learn-docker #specify the name of the container
     image: learn-docker
     depends_on: # mongo and redis must be running first before running the node-app
-      - postgres
+      - mongo
       - redis
     ports:
       - '5500:5500'
