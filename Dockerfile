@@ -1,4 +1,4 @@
-FROM node:18 as base
+FROM node:18-alpine as base
 
 ## u should specify the target stage from docker-compos file
 FROM base as development
@@ -15,4 +15,4 @@ COPY package*.json ./
 RUN npm ci --only=production
 COPY . .
 EXPOSE 5500
-CMD [ "npm", "run", "dev" ]
+CMD [ "npm", "start"]

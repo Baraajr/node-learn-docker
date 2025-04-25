@@ -5,3 +5,5 @@
 Dockerfile*
 .env
 docker-compose*
+.gitinore
+/.git
