@@ -45,7 +45,7 @@ services:
     container_name: nginx
     image: nginx:stable-alpine
     ports:
-      - '8080:80'
+      - '80:80'
     depends_on:
       - node-app
     volumes:
