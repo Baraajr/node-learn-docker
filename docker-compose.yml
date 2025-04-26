@@ -2,13 +2,10 @@
 version: '3'
 services:
   node-app:
-    container_name: learn-docker #specify the name of the container
     image: baraajr11/tresmegre-repo # specify the name of the image
     depends_on: # mongo and redis must be running first before running the node-app
       - mongo
       - redis
-    ports:
-      - '5500:5500'
     env_file:
       - ./.env
     restart: always

@@ -2,6 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const { createClient } = require('redis');
+const os = require('os');
 // const { Client } = require('pg');
 
 const app = express();
@@ -49,6 +50,7 @@ app.use(morgan('dev'));
 
 app.get('/', (req, res) => {
   redisClient.set('products', '{"name":"product1","price":100}');
+  console.log(`response from ${os.hostname()}`); // id of container
   res.send(`<h1>Main Page</h1>
     <h2>Redis is used to cache the data</h2>
     <h2>docker hub image used </h2>
