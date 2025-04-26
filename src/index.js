@@ -51,6 +51,7 @@ app.get('/', (req, res) => {
   redisClient.set('products', '{"name":"product1","price":100}');
   res.send(`<h1>Main Page</h1>
     <h2>Hot reload  </h2>
+    <h2>docker hub image used </h2>
     `);
 });
 
